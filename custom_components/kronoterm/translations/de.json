@@ -1,0 +1,42 @@
+{
+    "title": "Kronoterm Cost Forecast",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Konfiguration",
+                "description": "Wählen Sie Ihren Stromanbieter aus:",
+                "data": {
+                    "select_provider": "Stromanbieter"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Konfiguration",
+                "description": "Ändern Sie Ihre Konfiguration:",
+                "data": {
+                    "select_provider": "Stromanbieter",
+                    "selected_consumer": "Energieverbraucher (normalerweise Wärmepumpe)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "energy_price_sensor": {
+                "name": "Strompreis"
+            },
+            "black_hole_sensor": {
+                "name": "Dummy-Verbraucher"
+            },
+            "consumer_sensor": {
+                "name": "Verbraucher"
+            },
+            "total_cost_sensor": {
+                "name": "Gesamtkosten"
+            }
+        }
+    }
+}

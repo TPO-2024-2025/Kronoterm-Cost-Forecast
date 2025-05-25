@@ -1,0 +1,22 @@
+# artifacts
+__pycache__
+.pytest*
+*.egg-info
+*/build/*
+*/dist/*
+.coverage
+*_cache
+.venv
+
+
+# Home Assistant configuration
+API.ipynb
+.github/.DS_Store
+.DS_Store
+
+config/*
+!config/www
+!config/configuration.yaml
+!config/ui-lovelace.yaml
+!config/packages
+!config/lovelace

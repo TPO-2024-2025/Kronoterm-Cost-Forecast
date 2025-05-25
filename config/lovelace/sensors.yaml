@@ -1,0 +1,10 @@
+type: conditional
+conditions:
+  - entity: binary_sensor.kronoterm_forecast_integration_loaded
+    state: 'on'
+card:
+  type: entities
+  entities:
+    - sensor.consumer_sensor
+    - sensor.energy_price_sensor
+    - sensor.total_cost_sensor

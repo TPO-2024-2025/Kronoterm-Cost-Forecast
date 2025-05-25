@@ -1,0 +1,32 @@
+{
+    "folders": [
+        {
+            "name": "hacs",
+            "path": "."
+        },
+        {
+            "name": "docs",
+            "path": "../docs"
+        },
+    ],
+    "settings": {
+        "[python]": {
+            "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "files.trimTrailingWhitespace": true,
+        "[markdown]": {
+            "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+        },
+        "python.testing.pytestArgs": [
+            "test"
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "plantuml.exportFormat": "svg",
+        "plantuml.exportOutDir": "gradivo/img",
+        "plantuml.exportIncludeFolderHeirarchy": false,
+        "plantuml.exportSubFolder": false
+    }
+}

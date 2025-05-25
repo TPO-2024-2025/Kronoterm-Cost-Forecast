@@ -1,0 +1,29 @@
+type: conditional
+conditions:
+  - entity: binary_sensor.consumer_has_forecast
+    state: 'on'
+card:
+  type: custom:apexcharts-card
+  header:
+    title: Consumption Forecast
+    show: true
+  graph_span: 8h
+  span:
+    start: minute
+  apex_config:
+    yaxis:
+        labels:
+          # Change unit to match to what it should be
+          formatter: >
+            EVAL:function(v) {
+              return v + " kW";
+            }
+  series:
+    - entity: sensor.consumer_sensor
+      name: Consumption
+      type: line
+      unit: kW
+      data_generator: |
+        return entity.attributes.forecast.map((pair) => {
+          return [new Date(pair[0]).getTime(), pair[1] / 1000];
+        });

@@ -1,0 +1,17 @@
+template:
+  - binary_sensor:
+      - name: "Kronoterm Forecast Integration Loaded"
+        state: >
+          {{ states('sensor.energy_price_sensor') not in ['unavailable', 'unknown', 'none', '' ] }}
+      - name: "Kronoterm Cost Sensor Loaded"
+        state: >
+          {{ states('sensor.total_cost_sensor') not in ['unavailable', 'unknown', 'none', '' ] }}
+      - name: "Kronoterm Consumer Available"
+        state: >
+          {{ states('sensor.consumer_sensor') not in ['unavailable', 'unknown', 'none', '' ] }}
+      - name: "Consumer Has Forecast"
+        state: >
+          {{ state_attr('sensor.consumer_sensor', 'forecast') is not none }}
+      - name: "Cost Has Forecast"
+        state: >
+          {{ state_attr('sensor.total_cost_sensor', 'cost_forecast_cumulative') is not none }}

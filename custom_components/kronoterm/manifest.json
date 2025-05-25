@@ -1,0 +1,15 @@
+{
+  "domain": "kronoterm",
+  "name": "Kronoterm Cost Forecast",
+  "codeowners": [
+    "@schtrudl"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "recorder"
+  ],
+  "documentation": "https://github.com/TPO-2024-2025/Projekt-05",
+  "iot_class": "local_polling",
+  "requirements": [],
+  "version": "0.0.0"
+}

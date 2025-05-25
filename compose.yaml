@@ -1,0 +1,50 @@
+services:
+  hass:
+    container_name: hass
+    image: schtrudl/ha5:sha-30f6712
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - ./custom_components/kronoterm:/config/custom_components/kronoterm
+    restart: unless-stopped
+    privileged: true
+    networks:
+      - net
+    ports:
+      - "8123:8123"
+      - "5683:5683"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    environment:
+      TZ: Europe/Ljubljana
+    depends_on:
+      - mqtt
+      - kronoterm2mqtt
+
+  mqtt:
+    image: emqx/nanomq
+    container_name: mqtt
+    restart: unless-stopped
+    networks:
+      - net
+    ports:
+      - 1883:1883
+      - 8081:8081
+
+  kronoterm2mqtt:
+    image: ghcr.io/schtrudl/kronoterm2mqtt:latest
+    container_name: kronoterm2mqtt
+    restart: unless-stopped
+    networks:
+      - net
+    depends_on:
+      - mqtt
+    environment:
+      - MQTT_HOST=mqtt
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+
+networks:
+  net:
+    driver: bridge

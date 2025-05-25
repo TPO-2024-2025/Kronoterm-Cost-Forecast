@@ -1,0 +1,8 @@
+type: conditional
+conditions:
+  - entity: binary_sensor.kronoterm_consumer_available
+    state: 'on'
+card:
+  type: custom:custom-apex-card
+  entity: sensor.total_cost_sensor
+  title: Cost Comparison

@@ -1,0 +1,42 @@
+{
+    "title": "Kronoterm Cost Forecast",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Nastavitve",
+                "description": "Izberite svojega dobavitelja električne energije:",
+                "data": {
+                    "select_provider": "Dobavitelj električne energije"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Nastavitve",
+                "description": "Spremenite svoje nastavitve:",
+                "data": {
+                    "select_provider": "Dobavitelj električne energije",
+                    "selected_consumer": "Porabnik električne energije (običajno toplotna črpalka)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "energy_price_sensor": {
+                "name": "Cena električne energije"
+            },
+            "black_hole_sensor": {
+                "name": "Naivni porabnik"
+            },
+            "consumer_sensor": {
+                "name": "Porabnik"
+            },
+            "total_cost_sensor": {
+                "name": "Skupni strošek"
+            }
+        }
+    }
+}

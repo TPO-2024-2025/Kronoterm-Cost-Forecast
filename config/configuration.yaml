@@ -1,0 +1,18 @@
+homeassistant:
+  name: Home Assistant
+  packages: !include_dir_named packages
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+lovelace:
+  mode: YAML
+  resources:
+    - url: /local/apexcharts-card.js?v=2.1.2
+      type: module
+    - url: /local/custom-apex-card.js
+      type: module

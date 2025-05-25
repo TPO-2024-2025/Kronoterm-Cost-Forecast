@@ -1,0 +1,42 @@
+{
+    "title": "Kronoterm Cost Forecast",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Configuration",
+                "description": "Select your electricity provider:",
+                "data": {
+                    "select_provider": "Electricity provider"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Configuration",
+                "description": "Change your configuration:",
+                "data": {
+                    "select_provider": "Electricity provider",
+                    "selected_consumer": "Energy consumer (usually Heat Pump)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "energy_price_sensor": {
+                "name": "Electricity price"
+            },
+            "black_hole_sensor": {
+                "name": "Dummy consumer"
+            },
+            "consumer_sensor": {
+                "name": "Consumer"
+            },
+            "total_cost_sensor": {
+                "name": "Total cost"
+            }
+        }
+    }
+}

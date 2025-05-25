@@ -1,0 +1,10 @@
+"""File with defined constants."""
+
+DOMAIN = "kronoterm"
+NAME = "Kronoterm Cost Forecast"
+SELECT_PROVIDER = "select_provider"
+ENERGY_PRICE_SENSOR = "energy_price_sensor"
+SELECTED_CONSUMER = "selected_consumer"
+BLACK_HOLE_SENSOR = "black_hole_sensor"
+CONSUMER_SENSOR_ID = "consumer_sensor"
+TOTAL_COST_SENSOR = "total_cost_sensor"

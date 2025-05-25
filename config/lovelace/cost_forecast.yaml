@@ -1,0 +1,32 @@
+type: conditional
+conditions:
+  - entity: binary_sensor.cost_has_forecast
+    state: 'on'
+card:
+  type: custom:apexcharts-card
+  header:
+    title: Cost Forecast
+    show: true
+  graph_span: 8h
+  span:
+    start: minute
+  color_list: [green]
+  apex_config:
+    yaxis:
+        labels:
+          # Change unit to match sensor unit_of_measurement
+          formatter: >
+            EVAL:function(v) {
+              return v + " EUR";
+            }
+  series:
+    - entity: sensor.total_cost_sensor
+      name: Cost
+      type: column
+      group_by:
+        func: delta
+        duration: 1h
+      data_generator: |
+        return entity.attributes.cost_forecast_cumulative.map(([time, val]) => {
+            return [new Date(time).getTime(), val];
+        });

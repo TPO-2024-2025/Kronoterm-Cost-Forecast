@@ -1,0 +1,9 @@
+title: Home Dashboard
+views:
+  - title: Main
+    path: default_view
+    cards:
+      - !include lovelace/cost_forecast.yaml
+      - !include lovelace/consumption_forecast.yaml
+      - !include lovelace/sensors.yaml
+      - !include lovelace/cost_comparison.yaml
